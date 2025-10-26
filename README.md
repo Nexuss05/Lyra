@@ -23,7 +23,7 @@ Assicurati di avere installato i seguenti software prima di procedere:
 
 2.  **Entra nella directory del progetto**
     ```sh
-    cd lyra
+    cd Lyra
     ```
 
 3.  **Installa le dipendenze**

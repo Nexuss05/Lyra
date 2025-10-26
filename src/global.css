@@ -1,0 +1,293 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.2 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0 0);
+  /* Purple primary color */
+  --primary: oklch(0.62 0.25 290);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.5 0 0);
+  --accent: oklch(0.95 0.05 290);
+  --accent-foreground: oklch(0.3 0.1 290);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: oklch(0.62 0.25 290);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.25 0 0);
+  --sidebar-primary: oklch(0.62 0.25 290);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.98 0 0);
+  --sidebar-accent-foreground: oklch(0.25 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.62 0.25 290);
+  
+  /* Custom chat bubble colors */
+  --chat-user-bg: oklch(0.62 0.25 290);
+  --chat-user-fg: oklch(0.99 0 0);
+  --chat-ai-bg: oklch(0.97 0 0);
+  --chat-ai-fg: oklch(0.2 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.18 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.18 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  /* Purple primary for dark mode */
+  --primary: oklch(0.7 0.22 290);
+  --primary-foreground: oklch(0.18 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.25 0.08 290);
+  --accent-foreground: oklch(0.8 0.15 290);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.7 0.22 290);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.18 0 0);
+  --sidebar-foreground: oklch(0.8 0 0);
+  --sidebar-primary: oklch(0.7 0.22 290);
+  --sidebar-primary-foreground: oklch(0.18 0 0);
+  --sidebar-accent: oklch(0.25 0 0);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.25 0 0);
+  --sidebar-ring: oklch(0.7 0.22 290);
+  
+  /* Custom chat bubble colors for dark mode */
+  --chat-user-bg: oklch(0.62 0.25 290);
+  --chat-user-fg: oklch(0.99 0 0);
+  --chat-ai-bg: oklch(0.18 0 0);
+  --chat-ai-fg: oklch(0.95 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Animation Delays */
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-800 { animation-delay: 0.8s; }
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInUpSmooth {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================================
+   DEPTH & ELEVATION SYSTEM - Neomorphic Design (Video Reference)
+   ============================================================================ */
+
+/* Shadow Levels - Light Mode (Based on Video) */
+:root {
+  /* Level 0: Flat - No shadow */
+  --shadow-0: none;
+  
+  /* Small shadow - Subtle elevation */
+  --shadow-s: 
+    inset 0 1px 2px #ffffff30,  /* top highlight */
+    0 1px 2px #00000030,         /* dark shadow */
+    0 2px 4px #00000015;         /* soft shadow */
+  
+  /* Medium shadow - Clear elevation */
+  --shadow-m:
+    inset 0 1px 2px #ffffff50,  /* top highlight */
+    0 2px 4px #00000030,         /* dark shadow */
+    0 4px 8px #00000015;         /* soft shadow */
+  
+  /* Large shadow - Strong elevation */
+  --shadow-l:
+    inset 0 1px 2px #ffffff70,  /* top highlight */
+    0 4px 6px #00000030,         /* dark shadow */
+    0 6px 10px #00000015;        /* soft shadow */
+  
+  /* Inset shadows - For carved/pressed states */
+  --shadow-inset-s:
+    inset 0 1px 2px #00000030,
+    inset 0 2px 4px #00000015;
+  
+  --shadow-inset-m:
+    inset 0 2px 4px #00000030,
+    inset 0 4px 6px #00000015;
+  
+  --shadow-inset-l:
+    inset 0 4px 6px #00000030,
+    inset 0 6px 10px #00000015;
+  
+  /* Compatibility aliases for existing code */
+  --shadow-1: var(--shadow-s);
+  --shadow-2: var(--shadow-m);
+  --shadow-3: var(--shadow-l);
+  --shadow-4: var(--shadow-l);
+  
+  --shadow-inset-sm: var(--shadow-inset-s);
+  --shadow-inset-md: var(--shadow-inset-m);
+  --shadow-inset-lg: var(--shadow-inset-l);
+  --shadow-inset-deep: var(--shadow-inset-l);
+  --shadow-inset-carved: var(--shadow-inset-l);
+  
+  /* Circular button shadow - Inner ring effect */
+  --shadow-button-inner:
+    inset 0 -1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 1px 2px rgba(0, 0, 0, 0.15);
+  
+  /* Combined depth */
+  --shadow-depth: var(--shadow-m);
+}
+
+/* Shadow Levels - Dark Mode */
+.dark {
+  --shadow-s: 
+    inset 0 1px 2px rgba(255, 255, 255, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  --shadow-m:
+    inset 0 1px 2px rgba(255, 255, 255, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(0, 0, 0, 0.3);
+  
+  --shadow-l:
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    0 4px 6px rgba(0, 0, 0, 0.6),
+    0 6px 10px rgba(0, 0, 0, 0.4);
+  
+  --shadow-inset-s:
+    inset 0 1px 2px rgba(0, 0, 0, 0.5),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  
+  --shadow-inset-m:
+    inset 0 2px 4px rgba(0, 0, 0, 0.6),
+    inset 0 4px 6px rgba(0, 0, 0, 0.4);
+  
+  --shadow-inset-l:
+    inset 0 4px 6px rgba(0, 0, 0, 0.7),
+    inset 0 6px 10px rgba(0, 0, 0, 0.5);
+  
+  --shadow-button-inner:
+    inset 0 -1px 2px rgba(255, 255, 255, 0.05),
+    inset 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+.animate-fadeInUpSmooth {
+  animation: fadeInUpSmooth 0.3s ease-out forwards;
+}
+
+/* Thinking dots animation - smooth sequential bounce */
+@keyframes thinkingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.7;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.thinking-dot {
+  display: inline-block;
+  animation: thinkingDot 1.4s ease-in-out infinite;
+}
+
+.thinking-dot:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.thinking-dot:nth-child(2) {
+  animation-delay: 200ms;
+}
+
+.thinking-dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+
+/* Ensure your body or html has a dark background if not already set, e.g.: */
+/* body { background-color: #0c0c0d; } */ /* This is similar to neutral-950 */
+
